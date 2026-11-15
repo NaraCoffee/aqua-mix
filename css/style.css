@@ -1,0 +1,304 @@
+/* STEP 0. reset · 기본: testing/21, testing/22/3 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #333333;
+    background-color: #eef8fb;
+}
+h1, h2, h3 {
+    font-family: "Jua", "Noto Sans KR", sans-serif;
+    font-weight: normal;
+}
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+}
+main section {
+    padding-top: 88px;
+}
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #0b4f6c;
+}
+
+/* STEP 1. header · flex + sticky: testing/22/3 */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #0b4f6c;
+    color: #fff;
+}
+.logo {
+    font-size: 24px;
+}
+.menu {
+    display: flex;
+    gap: 24px;
+    font-weight: 700;
+}
+.menu a:hover, .sns a:hover {
+    text-decoration: underline;
+}
+
+/* STEP 2. 배너 · background + relative/absolute: testing/13, testing/22/3 */
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    min-height: 380px;
+    padding: 48px 40px;
+    background-color: #d8f3f5;
+    background-image: url(../img/hero.webp);
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    background-position: right 40px center;
+}
+.hero .sub {
+    letter-spacing: 6px;
+    color: #0b4f6c;
+}
+.hero h2 {
+    margin: 0;
+    font-size: 40px;
+}
+.hero > p, .hero h2 {
+    max-width: 65%;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0b4f6c;
+    color: #fff;
+    font-weight: 700;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+.sticker {
+    position: absolute;
+    right: 32px;
+    bottom: 24px;
+    padding: 16px 20px;
+    background-color: #f4a261;
+    color: #333;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* STEP 3. 체험 · 카드와 가격 줄의 flex: Project/flex-plants */
+.cards {
+    display: flex;
+    gap: 20px;
+}
+.card {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+    min-height: 310px;
+    padding: 28px 20px 20px;
+    border: 1px solid #b5dce5;
+    background-color: #fff;
+}
+.card:hover {
+    border-color: #0b4f6c;
+}
+.icon {
+    font-size: 48px;
+    text-align: center;
+}
+.card h3 {
+    font-size: 21px;
+    color: #0b4f6c;
+}
+.card > p {
+    line-height: 1.6;
+}
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+}
+.price button {
+    padding: 8px 14px;
+    border: none;
+    background-color: #0b4f6c;
+    color: #fff;
+    font-family: inherit;
+    cursor: pointer;
+}
+.tag {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    padding: 4px 10px;
+    background-color: #f4a261;
+    font-size: 12px;
+    font-weight: 700;
+}
+.tag.new {
+    background-color: #d8f3dc;
+}
+
+/* STEP 4. 관람 구역 · grid 선으로 영역 배치: testing/19, Project/flex-plants */
+.zones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 140px);
+    gap: 16px;
+}
+.zones li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #b5dce5;
+    background-color: #fff;
+    text-align: center;
+}
+.zones li:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    background-color: #0b4f6c;
+    color: #fff;
+}
+.zones li:nth-child(6) {
+    grid-column: 1 / 5;
+}
+.emoji {
+    font-size: 36px;
+}
+.zones li:nth-child(1) .emoji {
+    font-size: 72px;
+}
+.zones h3 {
+    font-size: 20px;
+}
+.floor {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.guide {
+    padding: 24px;
+    background-color: #fff;
+    line-height: 1.8;
+}
+
+/* STEP 5. footer · TOP: testing/22/3, Project/flex-plants */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 40px;
+    background-color: #0b4f6c;
+    color: #fff;
+    font-size: 14px;
+}
+.sns {
+    display: flex;
+    gap: 20px;
+}
+.top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 100;
+    padding: 12px 16px;
+    background-color: #f4a261;
+    color: #333;
+    font-weight: 700;
+}
+
+/* 24강의 media query: 좁은 화면은 카드 세로, 관람 구역 2열 */
+@media screen and (max-width: 767px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+    .menu {
+        gap: 20px;
+        font-size: 14px;
+    }
+    .hero {
+        min-height: 440px;
+        justify-content: flex-start;
+        padding: 32px 20px;
+        background-size: auto 190px;
+        background-position: right 16px bottom 16px;
+    }
+    .hero h2 {
+        font-size: 28px;
+    }
+    .hero > p, .hero h2 {
+        max-width: 100%;
+    }
+    .sticker {
+        right: auto;
+        left: 20px;
+        bottom: 28px;
+    }
+    main {
+        padding: 0 20px 40px;
+    }
+    main section {
+        padding-top: 120px;
+    }
+    .cards {
+        flex-direction: column;
+        gap: 28px;
+    }
+    .zones {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 140px);
+    }
+    .zones li:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+    .zones li:nth-child(1) .emoji {
+        font-size: 44px;
+    }
+    .zones li:nth-child(6) {
+        grid-column: 1 / 3;
+    }
+    footer {
+        flex-direction: column;
+        padding: 24px 20px;
+    }
+    .top {
+        right: 16px;
+        bottom: 16px;
+    }
+}
